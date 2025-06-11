@@ -1,4 +1,4 @@
-
+<title>About Us</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1377572968766636084/1382308390151258194/noFilter.webp?ex=684aae82&is=68495d02&hm=dc68b2dcf9213a211a7de376b9ae7f2a58888e8be889c75447c37e5fa308b10b&">
 <section id="about" style="background-color: #f5f5f5; padding: 60px 20px; font-family: Arial, sans-serif;">
