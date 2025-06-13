@@ -3,147 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us - Air Algérie Virtual</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Why Join — Air Algérie Virtual</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="icon" href="https://cdn.discordapp.com/attachments/1372489685493878784/1382748935579504661/avelodiscord_43.png?ex=684c48cc&is=684af74c&hm=7b35ee0fcc5aa306f225ba4d890821d53c12570a891560d808ea2ceae76ea11d&" />
- <style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --main-bg: #0a0a0a;
+      --highlight: #f43f5e;
+      --primary-text: #ffffff;
+      --secondary-text: #cbd5e1;
+      --accent: #dc2626;
+      --blur: rgba(255, 255, 255, 0.05);
+    }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
     }
-
     body {
-      background-color: #f5f5f5;
-      color: #222;
+      font-family: 'Space Grotesk', sans-serif;
+      background: radial-gradient(ellipse at top left, #1f1f1f, var(--main-bg));
+      color: var(--primary-text);
+      overflow-x: hidden;
+      line-height: 1.6;
     }
-
-    .navbar {
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 999;
     }
-
-    .navbar .left {
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--highlight);
+    }
+    nav ul {
       display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .navbar img {
-      height: 40px;
-      border-radius: 50%;
-    }
-
-    .navbar ul {
-      display: flex;
-      gap: 30px;
+      gap: 1.5rem;
       list-style: none;
     }
-
-    .navbar a {
+    nav ul li a {
       text-decoration: none;
-      padding: 10px 20px;
-      color: black;
-      border: 1px solid #000000;
-      border-radius: 50px;
-      transition: background 0.3s;
+      color: var(--primary-text);
+      transition: color 0.3s;
     }
-
-    .navbar a:hover, .navbar .active a {
-      background-color: #c82333;
-      color: white;
+    nav ul li a:hover {
+      color: var(--highlight);
     }
-
-    .hero {
-      background-image: url('https://cdn.discordapp.com/attachments/1377572968766636084/1382781442483814500/Untitled_design_53.png?ex=684c6712&is=684b1592&hm=16de39821c26ea06b70d1ed4597ac52c36ac4798e9d98ee4a0504e9c36ecad84&');
-      background-size: cover;
-      height: 60vh;
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    .hero h1 {
-      font-size: 4em;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-    }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 900px;
+    .main {
+      padding: 5rem 2rem;
+      max-width: 1100px;
       margin: auto;
     }
-
-    .section h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      color: #a40000;
-    }
-
-    .section p {
-      font-size: 1.1em;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .footer {
-      background: #222;
-      color: #ccc;
+    .main h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: var(--highlight);
       text-align: center;
-      padding: 20px;
+    }
+    .section {
+      background: var(--blur);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(12px);
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--highlight);
+    }
+    .section p {
+      color: var(--secondary-text);
+      font-size: 1.1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+    canvas.particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="left">
-      <img src="https://cdn.discordapp.com/attachments/1378269036625789038/1382772310993408234/ah_logo.png?ex=684c5e91&is=684b0d11&hm=e28f6f0114ffc146186891568b787ef89accbee1495380423272b381d3d8a31d&" alt="Air Algerie Logo">
-      <h3>Air Algérie Virtual</h3>
-    </div>
+  <canvas class="particles"></canvas>
+  <nav>
+    <div class="logo">Air Algérie Virtual</div>
     <ul>
       <li><a href="https://pfairalgerie.github.io/mainloggedin/">Home</a></li>
-      <li><a href="https://pfairalgerie.github.io/rules/">Server Rules</a></li>
-    </ul>
+      <li><a href="https://pfairalgerie.github.io/rules/">Server's Rules</a></li>
+     </ul>
   </nav>
 
-  <section class="hero">
-    <h1>About Us</h1>
-    <p>Discover the mission and values of Air Algérie Virtual</p>
-  </section>
+  <main class="main">
+    <h1>Why Join Air Algérie Virtual?</h1>
 
-  <section class="section">
-    <h2>Who We Are</h2>
-    <p>
-      Air Algérie Virtual is a community of aviation enthusiasts replicating the operations of Air Algérie in a virtual environment. Our goal is to provide an immersive and professional simulation experience for flight simulator pilots.
-    </p>
-    <p>
-      We are based on real-world procedures and routes, offering realistic flight logging, events, and community engagement. Our pilots are encouraged to grow their skills and contribute to a vibrant and respectful community.
-    </p>
+    <div class="section">
+      <h2>Our Vision</h2>
+      <p>
+        Air Algérie Virtual aims to offer an immersive flight simulation experience within the Roblox universe through Project Flight.
+        We combine realism, professionalism, and community engagement to shape the most enjoyable virtual airline in the game.
+      </p>
+    </div>
 
-    <h2>Our Mission</h2>
-    <p>
-      Our mission is to emulate the spirit of Air Algérie through professionalism, realism, and passion for aviation. We strive to make virtual flying more accessible, enjoyable, and educational for all.
-    </p>
+    <div class="section">
+      <h2>Opportunities for Everyone</h2>
+      <p>
+        Whether you're a casual flyer or an aviation fanatic, we welcome pilots of all skill levels.
+        You’ll have the chance to climb the ranks, attend events, and even apply for staff positions.
+      </p>
+    </div>
 
-    <h2>Join Us</h2>
-    <p>
-      Whether you're a seasoned virtual pilot or just getting started, Air Algérie Virtual welcomes you. Fly with us, grow with us, and become part of our virtual skies.
-    </p>
-  </section>
+    <div class="section">
+      <h2>Innovative Systems</h2>
+      <p>
+        Our web-based tools allow you to track your flights, progress, and unlock rewards. All in a streamlined and modern interface,
+        designed with simplicity and performance in mind.
+      </p>
+    </div>
 
-  <footer class="footer">
-    &copy; 2025 Air Algérie Virtual. All rights reserved.
+    <div class="section">
+      <h2>Built by Passion</h2>
+      <p>
+        Air Algérie Virtual is more than just a group. It’s a team of passionate aviation fans that constantly push the boundaries of virtual flight.
+        We’re not just flying — we’re soaring to new heights.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    Air Algérie Virtual © 2025 — All Rights Reserved.
   </footer>
+
+  <script>
+    const canvas = document.querySelector("canvas.particles");
+    const ctx = canvas.getContext("2d");
+    let width, height;
+    let stars = [];
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    for (let i = 0; i < 150; i++) {
+      stars.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 1.8,
+        alpha: Math.random(),
+        dx: (Math.random() - 0.5) * 0.3,
+        dy: (Math.random() - 0.5) * 0.3,
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      for (let star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${star.alpha})`;
+        ctx.fill();
+        star.x += star.dx;
+        star.y += star.dy;
+        if (star.x < 0 || star.x > width) star.dx *= -1;
+        if (star.y < 0 || star.y > height) star.dy *= -1;
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
 </body>
 </html>
